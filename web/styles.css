@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+  min-height: 100vh;
+  padding: 10px;
+  color: #fff;
+}
+
+.header-banner {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carnival-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'%3E%3Cpath d='M50 15c-19.33 0-35 15.67-35 35s15.67 35 35 35 35-15.67 35-35S69.33 15 50 15zm0 60c-13.81 0-25-11.19-25-25s11.19-25 25-25 25 11.19 25 25-11.19 25-25 25z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.1;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.fest-zone {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theater {
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow-x: auto;
+}
+
+.screen {
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#seating-map {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+  padding: 10px;
+  justify-items: center;
+  min-width: min-content;
+}
+
+.seat {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.seat.available {
+  background: linear-gradient(145deg, #4CAF50, #45a049);
+}
+
+.seat.reserved {
+  background: linear-gradient(145deg, #f44336, #da190b);
+}
+
+.seat.selected {
+  background: linear-gradient(145deg, #2196F3, #1976D2);
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .fest-zone {
+    font-size: 2em;
+  }
+
+  .seat {
+    width: 45px;
+    height: 45px;
+    font-size: 12px;
+  }
+
+  #seating-map {
+    gap: 10px;
+    padding: 20px;
+  }
+}
+
+.form-container {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  .button-group {
+    flex-direction: row;
+  }
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background: linear-gradient(145deg, #4CAF50, #45a049);
+  color: white;
+}
+
+#cancel-btn {
+  background: linear-gradient(145deg, #f44336, #da190b);
+  color: white;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend .seat {
+  width: 25px;
+  height: 25px;
+  cursor: default;
+}
+
+.reservations-list {
+  padding: 15px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.reservations-table {
+  width: 100%;
+  min-width: 300px;
+  border-collapse: collapse;
+}
+
+.reservations-table th,
+.reservations-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .reservations-table th,
+  .reservations-table td {
+    padding: 15px;
+  }
+}
+
+.reservations-table th {
+  background: rgba(255,255,255,0.1);
+  font-weight: 600;
+}
+
+.reservations-table tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.seat:hover {
+  animation: pulse 1s infinite;
+}
+
+.delete-btn {
+  background: linear-gradient(145deg, #f44336, #da190b);
+  color: white;
+  padding: 8px 12px;
+  font-size: 12px;
+  width: auto;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(145deg, #da190b, #c41810);
+}
+
+@media (max-width: 480px) {
+  .reservations-table th,
+  .reservations-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .delete-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
